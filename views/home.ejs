@@ -1,0 +1,9 @@
+<%- include('./partials/header'); -%>
+
+<h1>Home</h1>
+<p><%= paraContent %></p>
+<% post.forEach( item => {  %>
+  <h3><%= item.title %> </h3>
+  <p> <%= item.content %> </p>
+<% }) %>
+<%- include('./partials/footer'); -%>
