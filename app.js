@@ -25,7 +25,20 @@ app.get('/', (req, res) => {
                       });
 
 });
-
+app.get('/posts/:types', (req,res) => {
+  //console.log("Length : " + posts.length);
+  posts.forEach(item => {
+    //console.log("Params outside: " + req.params.types);
+    if(req.params.types == item.title)
+    {
+      console.log("Matched : " + req.params.types);
+    }
+    else{
+      console.log("Dont Matched : " + req.params.types);
+    }
+  })
+  res.redirect("/")
+})
 app.get('/about', (req, res) =>{
   res.render('about', {abContent : aboutContent});
 })
