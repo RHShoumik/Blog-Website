@@ -4,6 +4,6 @@
 <p><%= paraContent %></p>
 <% post.forEach( item => {  %>
   <a href="<%= item.url %>"><h3><%= item.title %> </h3></a>
-  <p> <%= item.content %> </p>
+  <p> <%= item.content.slice(0,100) + "..." %> <a href="<%= item.url %>">Read More</a></p>
 <% }) %>
 <%- include('./partials/footer'); -%>
