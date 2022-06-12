@@ -34,12 +34,7 @@ app.get('/posts/:types', (req,res) => {
     const storedTitle = _.lowerCase(item.title);
     if(storedTitle === requestedTitle)
     {
-      console.log("Matched : " + req.params.types);
       res.render('post' , {title: item.title , content : item.content}) 
-    }
-    else{
-      console.log("Dont Matched : " + req.params.types);
-      res.redirect("/")
     }
   })
   //res.redirect("/")
@@ -58,8 +53,10 @@ app.get('/compose', (req, res) =>{
 app.post('/compose', (req, res) =>{
   const post = {
     title : req.body.postTitle,
-    content : req.body.postContent
+    content : req.body.postContent,
+    url :  "/posts/" + req.body.postTitle
   };
+  console.log(post.url);
   posts.push(post);
   res.redirect("/");
 })

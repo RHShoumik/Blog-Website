@@ -3,7 +3,7 @@
 <h1>Home</h1>
 <p><%= paraContent %></p>
 <% post.forEach( item => {  %>
-  <h3><%= item.title %> </h3>
+  <a href="<%= item.url %>"><h3><%= item.title %> </h3></a>
   <p> <%= item.content %> </p>
 <% }) %>
 <%- include('./partials/footer'); -%>
